@@ -1,0 +1,15 @@
+/:
+  controller: Main
+  action: index
+
+/dashboard:
+  controller: Main
+  action: dashboard
+
+/login:
+  controller: Security
+  action: login
+
+/logout:
+  controller: Security
+  action: logout
