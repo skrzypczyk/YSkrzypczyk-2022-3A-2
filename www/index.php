@@ -2,6 +2,17 @@
 namespace App;
 //Contrainte : utilisation des Namespace
 
+
+spl_autoload_register(function ($class) {
+    $class = str_replace("App\\","", $class);
+    $class = str_replace("\\","/", $class).".php";
+    if(file_exists($class)){
+        include $class;
+    }
+});
+
+
+
 //Récupérer dans l'url l'uri /login ou /user/toto
 //Nettoyer la donnée
 //S'il y a des paramètres dans l'url il faut les enlever :
@@ -26,12 +37,17 @@ $uri = (empty($uri))?"/":$uri;
 // $controller = new Security();
 // $controller->login();
 
+if(!file_exists("routes.yml")) {
+    die("Le fichier de routing n'existe pas");
+}
+
 $routes = yaml_parse_file("routes.yml");
 
 //Page 404
 if(empty($routes[$uri])) {
     die("Page 404");
 }
+
 if(empty($routes[$uri]["controller"]) || empty($routes[$uri]["action"])) {
     die("Absence de controller ou d'action dans le ficher de routing pour la route ".$uri);
 }
