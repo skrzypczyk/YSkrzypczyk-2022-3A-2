@@ -4,10 +4,17 @@ class View {
 
     private String $view;
     private String $template;
+    private $data = [];
 
     public function __construct(String $view, String $template="back"){
         $this->setView($view);
         $this->setTemplate($template);
+    }
+
+
+    public function assign(String $key, String $value): void
+    {
+        $this->data[$key]=$value;
     }
 
     public function setView(String $view): void
@@ -28,6 +35,7 @@ class View {
     }
 
     public function __destruct(){
+        extract($this->data);
         include $this->template;
     }
 

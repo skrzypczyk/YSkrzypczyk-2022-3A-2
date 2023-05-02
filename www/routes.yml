@@ -17,3 +17,7 @@
 /logout:
   controller: Security
   action: logout
+
+/register:
+  controller: Security
+  action: register
