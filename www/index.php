@@ -4,6 +4,7 @@ namespace App;
 
 
 spl_autoload_register(function ($class) {
+    //Core/View.php
     $class = str_replace("App\\","", $class);
     $class = str_replace("\\","/", $class).".php";
     if(file_exists($class)){
@@ -63,7 +64,7 @@ if(!file_exists("Controllers/".$controller.".php")){
 include "Controllers/".$controller.".php";
 
 //Le fichier existe mais est-ce qu'il possède la bonne classe
-//bien penser à ajouter le namespace
+//bien penser à ajouter le namespace \App\Controllers\Security
 $controller = "\\App\\Controllers\\".$controller;
 if(!class_exists($controller)){
     die("La class ".$controller." n'existe pas");
@@ -77,3 +78,11 @@ if(!method_exists($objet, $action)){
 }
 
 $objet->$action();
+
+
+
+
+
+
+
+

@@ -25,3 +25,21 @@ $secu2 = new secuAuth();
 $secu3 = new secuAuth();
 $secu4 = new secuAuth();
 $secu->login();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

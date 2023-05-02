@@ -58,6 +58,7 @@ class User {
        echo "Comme une fonction";
     }
 
+
     public function __toString()
     {
         return "L'utilisation a pour email : ".$this->email;
