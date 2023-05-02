@@ -4,15 +4,15 @@ use App\Core\Sql;
 
 class User extends Sql {
 
-    private Int $id = 0;
-    private String $firstname;
-    private String $lastname;
-    private String $country;
-    private String $email;
-    private String $password;
-    private Int $status = 0;
-    private $date_inserted;
-    private $date_updated;
+    protected Int $id = 0;
+    protected String $firstname;
+    protected String $lastname;
+    protected String $country;
+    protected String $email;
+    protected String $password;
+    protected Int $status = 0;
+    protected $date_inserted;
+    protected $date_updated;
 
     /**
      * @return int
