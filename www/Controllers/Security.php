@@ -11,13 +11,12 @@ class Security{
 
     public function register(): void
     {
+        /*
         $user = new User();
-        $user->setEmail("Y.SKRZYPCZYK@gmail.com");
-        $user->setFirstname("Yves");
-        $user->setLastname("SkrzYpczYK");
-        $user->setPassword("Test1234");
-        $user->setCountry("PL");
+        $user->setId(2);
+        $user->setEmail("test@gmail.com");
         $user->save();
+        */
     }
 
     public function logout(): void
