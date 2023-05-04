@@ -1,15 +1,17 @@
 <?php
 namespace App\Forms;
 
-use App\Forms\Interfaces\IForm;
+use App\Forms\Abstract\AForm;
 
-class AddUser implements IForm {
+class AddUser extends AForm {
+
+    protected $method = "POST";
 
     public function getConfig(): array
     {
         return [
             "config"=>[
-                "method"=>'POST',
+                "method"=>$this->getMethod(),
                 "action"=>"",
                 "enctype"=>"",
                 "submit"=>"S'inscrire",
@@ -33,7 +35,7 @@ class AddUser implements IForm {
                 "email"=>[
                     "type"=>"email",
                     "placeholder"=>"Votre email",
-                    "error"=>"Votre email est incorrect"
+                    "error"=>"Le format de votre email est incorrect"
                 ],
                 "pwd"=>[
                     "type"=>"password",
@@ -48,7 +50,7 @@ class AddUser implements IForm {
                 ],
                 "country"=>[
                     "type"=>"select",
-                    "options"=>["FR", "PL"],
+                    "options"=>["","FR", "PL"],
                     "error"=>"Pays incorrect"
                 ]
             ]

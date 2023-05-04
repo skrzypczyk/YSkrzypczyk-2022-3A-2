@@ -12,7 +12,7 @@ class View {
     }
 
 
-    public function assign(String $key, String $value): void
+    public function assign(String $key, $value): void
     {
         $this->data[$key]=$value;
     }
@@ -32,6 +32,11 @@ class View {
             die("Le template ".$template." n'existe pas");
         }
         $this->template = $template;
+    }
+
+    public function modal($name, $config):void
+    {
+        include "Views/Modals/".$name.".php";
     }
 
     public function __destruct(){
